@@ -15,7 +15,7 @@ int main()
     a.add(69);
     a.add(30);
     cout<<"-------------------"<<endl;
-    a.preOrderTraversal();
+    a.preorderTraversal();
     bool check=a.isIn(40);
     if (check==true)
     {
@@ -26,4 +26,6 @@ int main()
         cout<<"Data not found."<<endl;
     }
     return 0;
+	cout<<a.min();
+
 }
