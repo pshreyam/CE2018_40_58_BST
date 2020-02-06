@@ -14,6 +14,7 @@ public:
     void add(int val);
     void preOrderTraversal();
     bool isIn(int val);
+    int min();
 };
 
 ArrayBST::ArrayBST()
@@ -117,6 +118,20 @@ bool ArrayBST::isIn(int val)
         }
 	}
 	return false;
+}
+
+int ArrayBST:: min(){
+		int i=1;
+		while(i<MAX_SIZE){
+			if(this->element[2*i]!=0 && 2*i<MAX_SIZE){
+				i=2*i;
+			}
+			else{
+				break;
+			}
+		}
+		cout<<"Index for min value"<<i<<endl;
+		return this->element[i];
 }
 #endif // ARRAYBST_H
 
