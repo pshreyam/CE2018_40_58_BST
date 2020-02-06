@@ -3,14 +3,14 @@
 int main(){
     std::cout<<"***Binary Tree Linked List Implementation***"<<std::endl;
     LinkedBST tree;
-    
+
     //adding datas
     tree.add(17);
     tree.add(11);
     tree.add(41);
     tree.add(122);
     tree.add(5);
-    
+
     std::cout<<"Pre order traveral: "<<std::endl;
     tree.preorderTraversal();
 

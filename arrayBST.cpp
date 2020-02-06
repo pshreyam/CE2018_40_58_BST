@@ -3,29 +3,16 @@
 int main()
 {
     ArrayBST a;
-    a.add(5);
-    a.add(6);
-    a.add(4);
-    a.add(10);
     a.add(40);
-    a.add(3);
-    a.add(2);
+    a.add(20);
     a.add(50);
-    a.add(32);
-    a.add(69);
-    a.add(30);
-    cout<<"-------------------"<<endl;
-    a.preorderTraversal();
-    bool check=a.isIn(40);
-    if (check==true)
-    {
-        cout<<"Data found."<<endl;
-    }
-    else
-    {
-        cout<<"Data not found."<<endl;
-    }
-    return 0;
-	cout<<a.min();
+    a.add(10);
+    a.add(25);
+    a.add(45);
+    a.add(60);
 
+    cout<<"-------------------"<<endl;
+    cout << a.min() << endl;
+    cout << a.max() << endl;
+    return 0;
 }
