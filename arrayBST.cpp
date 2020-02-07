@@ -12,7 +12,9 @@ int main()
     a.add(60);
 
     cout<<"-------------------"<<endl;
+
     cout << a.min() << endl;
     cout << a.max() << endl;
+
     return 0;
 }

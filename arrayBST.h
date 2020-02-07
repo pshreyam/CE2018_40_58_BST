@@ -1,7 +1,9 @@
 #ifndef ARRAYBST_H
 #define ARRAYBST_H
+
 #include "BST.h"
 #define MAX_SIZE 1000
+
 using namespace std;
 class ArrayBST : public BST
 {
@@ -11,13 +13,13 @@ private:
 public:
 	ArrayBST();
 	~ArrayBST();
-	virtual bool search(int val);
-	virtual void add(int val);
-	virtual void preOrder();
-	// virtual void inOrder();
-	virtual int min();
-	virtual int max();
-	// virtual void deleteNode(int val);
+	bool search(int val);
+	void add(int val);
+	void preOrder();
+	void inOrder();
+	int min();
+	int max();
+	void deleteNode(int val);
 };
 
 ArrayBST::ArrayBST()
@@ -156,6 +158,16 @@ int ArrayBST::max()
 		}
 	}
 	return this->data[i];
+}
+
+void ArrayBST::inOrder()
+{
+
+}
+
+void ArrayBST::deleteNode(int val)
+{
+
 }
 
 #endif // ARRAYBST_H
