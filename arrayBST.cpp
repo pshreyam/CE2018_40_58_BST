@@ -19,5 +19,9 @@ int main()
     // cout << "Maximum Value of the tree = " << a.max() << endl;
     // cout << "-------------------" << endl;
     cout << a.getLength() << endl;
+
+    cout << a.min() << endl;
+    cout << a.max() << endl;
+
     return 0;
 }

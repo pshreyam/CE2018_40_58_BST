@@ -1,7 +1,9 @@
 #ifndef ARRAYBST_H
 #define ARRAYBST_H
+
 #include "BST.h"
 #define MAX_SIZE 1000
+
 using namespace std;
 class ArrayBST : public BST
 {
@@ -162,6 +164,7 @@ int ArrayBST::max()
 	return this->data[i];
 }
 
+
 void swap(int &x, int &y)
 {
 	int temp;
@@ -195,6 +198,13 @@ void ArrayBST::inOrder(int l)
 		cout << a[i] << " ";
 	}
 	cout << endl;
+}
+
+
+void ArrayBST::deleteNode(int val)
+{
+
+
 }
 
 #endif // ARRAYBST_H
