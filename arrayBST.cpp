@@ -12,12 +12,12 @@ int main()
     a.add(60);
 
     cout<<"-------------------"<<endl;
-    // a.preOrder();
+    a.preOrder();
     // a.inOrder();
-    // cout << "-------------------" << endl;
-    // cout << "Minimum Value of the tree = " << a.min() << endl;
-    // cout << "Maximum Value of the tree = " << a.max() << endl;
-    // cout << "-------------------" << endl;
+    cout << "-------------------" << endl;
+    cout << "Minimum Value of the tree = " << a.min() << endl;
+    cout << "Maximum Value of the tree = " << a.max() << endl;
+    cout << "-------------------" << endl;
     cout << a.getLength() << endl;
 
     cout << a.min() << endl;

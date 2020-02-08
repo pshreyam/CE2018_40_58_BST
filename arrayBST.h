@@ -201,10 +201,10 @@ void ArrayBST::inOrder(int l)
 }
 
 
-void ArrayBST::deleteNode(int val)
-{
+// void ArrayBST::deleteNode(int val)
+// {
 
 
-}
+// }
 
 #endif // ARRAYBST_H
