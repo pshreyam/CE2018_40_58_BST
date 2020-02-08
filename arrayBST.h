@@ -176,14 +176,14 @@ void swap(int &x, int &y)
 void ArrayBST::inOrder(int l)
 {
 	int a[l], i, j;
-	for(i=1; i < 10; i++)
+	for(i=1; i <= l; i++)
 	{
 		a[i] = this->data[i];
 	}
 
-	for (i = 1; i < 10; i++)
+	for (i = 0; i < l; i++)
 	{
-		for(j = 0; j < 10 - i; j++)
+		for(j = 1; j < l - i; j++)
 		{
 			if(a[j] > a[j+1])
 			{
@@ -193,7 +193,7 @@ void ArrayBST::inOrder(int l)
 	}
 
 	cout << "Inorder: ";
-	for(i = 1; i < 10;  i++)
+	for(i = 2; i <= l;  i++)
 	{
 		cout << a[i] << " ";
 	}

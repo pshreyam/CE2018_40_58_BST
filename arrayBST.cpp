@@ -3,6 +3,7 @@
 int main()
 {
     ArrayBST a;
+    int length;
     a.add(30);
     a.add(20);
     a.add(40);
@@ -10,18 +11,15 @@ int main()
     a.add(25);
     a.add(45);
     a.add(60);
-
+    a.add(3);
+    a.add(31);
+    length = a.getLength();
     cout<<"-------------------"<<endl;
     a.preOrder();
-    // a.inOrder();
+    a.inOrder(length);
     cout << "-------------------" << endl;
     cout << "Minimum Value of the tree = " << a.min() << endl;
     cout << "Maximum Value of the tree = " << a.max() << endl;
     cout << "-------------------" << endl;
-    cout << a.getLength() << endl;
-
-    cout << a.min() << endl;
-    cout << a.max() << endl;
-
     return 0;
 }
