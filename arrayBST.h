@@ -7,6 +7,7 @@ class ArrayBST : public BST
 {
 private:
 	int data[MAX_SIZE];
+	int length{0};
 
 public:
 	ArrayBST();
@@ -14,9 +15,10 @@ public:
 	virtual bool search(int val);
 	virtual void add(int val);
 	virtual void preOrder();
-	// virtual void inOrder();
+	virtual void inOrder(int l);
 	virtual int min();
 	virtual int max();
+	int getLength(){ return length; }
 	// virtual void deleteNode(int val);
 };
 
@@ -35,6 +37,7 @@ void ArrayBST::add(int val)
 	if (this->data[1] == 0)
 	{
 		this->data[1] = val;
+		length++;
 	}
 	else
 	{
@@ -54,6 +57,7 @@ void ArrayBST::add(int val)
 			{
 				this->data[i] = val;
 				cout << val << " inserted successfully." << endl;
+				length++;
 				break;
 			}
 		}
@@ -156,6 +160,41 @@ int ArrayBST::max()
 		}
 	}
 	return this->data[i];
+}
+
+void swap(int &x, int &y)
+{
+	int temp;
+	temp = x;
+	x = y;
+	y = temp;
+}
+
+void ArrayBST::inOrder(int l)
+{
+	int a[l], i, j;
+	for(i=1; i < 10; i++)
+	{
+		a[i] = this->data[i];
+	}
+
+	for (i = 1; i < 10; i++)
+	{
+		for(j = 0; j < 10 - i; j++)
+		{
+			if(a[j] > a[j+1])
+			{
+				swap(a[j], a[j+1]);
+			}
+		}
+	}
+
+	cout << "Inorder: ";
+	for(i = 1; i < 10;  i++)
+	{
+		cout << a[i] << " ";
+	}
+	cout << endl;
 }
 
 #endif // ARRAYBST_H
