@@ -13,10 +13,9 @@ int main()
     a.add(60);
     a.add(3);
     a.add(31);
-    length = a.getLength();
     cout<<"-------------------"<<endl;
     a.preOrder();
-    a.inOrder(length);
+    a.inOrder();
     cout << "-------------------" << endl;
     cout << "Minimum Value of the tree = " << a.min() << endl;
     cout << "Maximum Value of the tree = " << a.max() << endl;

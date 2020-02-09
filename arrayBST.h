@@ -17,7 +17,7 @@ public:
 	virtual bool search(int val);
 	virtual void add(int val);
 	virtual void preOrder();
-	virtual void inOrder(int l);
+	virtual void inOrder();
 	virtual int min();
 	virtual int max();
 	int getLength(){ return length; }
@@ -173,17 +173,17 @@ void swap(int &x, int &y)
 	y = temp;
 }
 
-void ArrayBST::inOrder(int l)
+void ArrayBST::inOrder()
 {
-	int a[l], i, j;
-	for(i=1; i <= l; i++)
+	int a[length], i, j;
+	for(i=1; i <= length; i++)
 	{
 		a[i] = this->data[i];
 	}
 
-	for (i = 0; i < l; i++)
+	for (i = 0; i < length; i++)
 	{
-		for(j = 1; j < l - i; j++)
+		for(j = 1; j < length - i; j++)
 		{
 			if(a[j] > a[j+1])
 			{
@@ -193,7 +193,7 @@ void ArrayBST::inOrder(int l)
 	}
 
 	cout << "Inorder: ";
-	for(i = 2; i <= l;  i++)
+	for(i = 2; i <= length;  i++)
 	{
 		cout << a[i] << " ";
 	}
