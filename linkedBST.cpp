@@ -17,6 +17,10 @@ int main()
     tree.preOrder();
     cout<<endl<<"--------------------------"<<endl;
 
+    cout<<"In-order traversal: "<<endl;
+    tree.inOrder();
+    cout<<endl<<"--------------------------"<<endl;
+
     cout<<"Adding 101: ";
     tree.add(101);
     cout<<endl<<endl;
@@ -25,12 +29,30 @@ int main()
     tree.preOrder();
     cout<<endl<<"--------------------------"<<endl;
 
+    cout<<"In-order traversal: "<<endl;
+    tree.inOrder();
+    cout<<endl<<"--------------------------"<<endl;
+
     cout<<"Is 11 in data: "<<tree.search(11)<<endl;
     cout<<"Is 13 in data: "<<tree.search(13)<<endl;
     cout<<"--------------------------"<<endl;
 
     cout<<"Min. value is: "<<tree.min()<<endl;
     cout<<"Max. value is: "<<tree.max()<<endl;
+
+    cout<<"---------------------------"<<endl;
+
+    //deleting 11 and 101
+    tree.deleteNode(11);
+    tree.deleteNode(101);
+
+    cout<<"Deleting node 11 and 101:"<<endl;
+    cout<<"Is 11 in data: "<<tree.search(11)<<endl;
+    cout<<"---------------------------"<<endl;
+
+    cout<<"In-order traversal: "<<endl;
+    tree.inOrder();
+    cout<<endl<<"--------------------------"<<endl;
 
     return 0;
 }

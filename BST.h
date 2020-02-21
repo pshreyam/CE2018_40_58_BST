@@ -10,7 +10,7 @@ public:
      virtual void inOrder() = 0;
      virtual int min() = 0;
      virtual int max() = 0;
-     // virtual void deleteNode(int val) = 0;
+     virtual void deleteNode(int val) = 0;
 };
 
 #endif // BST_H

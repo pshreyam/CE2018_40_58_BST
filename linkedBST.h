@@ -29,10 +29,11 @@ class LinkedBST:public BST{
     void deleteNode(int val);
 
     private:
-    bool find(Node* &root,int targetKey);
+    bool searchFromTree(Node* &root,int targetKey);
     void insert(Node* &subtree, Node* newNode);
-    void traverse(Node* root);
-
+    void traversePreOrder(Node* root);
+    void traverseInOrder(Node *root);
+    void deleteFromTree(Node *root,int val);
 };
 
 LinkedBST::LinkedBST()
@@ -46,7 +47,6 @@ void LinkedBST::add(int data)
 {
     add(root,data);
 }
-
 
 void LinkedBST::add(Node* &root,int data)
 {
@@ -86,10 +86,10 @@ void LinkedBST::insert(Node* &subtree, Node* newNode)
 
 bool LinkedBST::search(int data)
 {
-    return find(root,data);
+    return searchFromTree(root,data);
 }
 
-bool LinkedBST::find(Node* &root,int targetKey)
+bool LinkedBST::searchFromTree(Node* &root,int targetKey)
 {
     if(root==NULL){
         cout<<"It is a Null tree"<<endl;
@@ -118,16 +118,30 @@ bool LinkedBST::find(Node* &root,int targetKey)
 
 void LinkedBST::preOrder()
 {
-    traverse(root);
+    traversePreOrder(root);
 }
 
-void LinkedBST::traverse(Node* root)
+void LinkedBST::inOrder()
+{
+    traverseInOrder(root);
+}
+
+void LinkedBST::traversePreOrder(Node* root)
 {
     if (root == NULL)
     return;
     cout << root->data << " ";
-    traverse(root->left);
-    traverse(root->right);
+    traversePreOrder(root->left);
+    traversePreOrder(root->right);
+}
+
+void LinkedBST::traverseInOrder(Node* root)
+{
+    if (root == NULL)
+    return;
+    traverseInOrder(root->left);
+    cout << root->data << " ";
+    traverseInOrder(root->right);
 }
 
 int LinkedBST::min()
@@ -166,14 +180,72 @@ int LinkedBST::max()
     }
 }
 
-void LinkedBST::inOrder()
-{
-
-}
-
 void LinkedBST::deleteNode(int val)
 {
+    deleteFromTree(root,val);
+}
 
+void LinkedBST::deleteFromTree(Node *root,int val)
+{
+    int dat;
+    if(root==NULL){
+        cout<<"tree is empty"<<endl;
+        return;
+    }
+    if(val<root->data){
+        Node* temp=new Node();
+        temp=root->left;
+        if(root->left->data==val && root->left->left==NULL && root->left->right==NULL){
+            root->left=NULL;
+        }
+        deleteFromTree(temp,val);
+        return;
+    }
+    else if(val>root->data){
+        Node* temp=new Node();
+        temp=root->right;
+        if(root->right->data==val && root->right->left==NULL && root->right->right==NULL){
+            root->right=NULL;
+        }
+        deleteFromTree(temp,val);
+        return;
+    }
+    else{
+        if(root->left==NULL && root->right==NULL){
+            delete root;
+            root=NULL;
+            return;
+        }
+        else if(root->left==NULL){
+            Node* temp=new Node();
+            temp=root->right;
+            root->data=root->right->data;
+            root->right=root->right->right;
+            delete temp;
+            return;
+        }
+        else if(root->right==NULL){
+            Node* temp=new Node();
+            temp=root->left;
+            root->data=root->left->data;
+            root->left=root->left->left;
+            delete temp;
+            return;
+        }
+        else{
+            Node* nodetoDelete=new Node();
+            nodetoDelete=root;
+            Node* newNode=new Node();
+            newNode=root->left;
+            while(newNode->right!=NULL){
+                newNode=newNode->right;
+            }
+            dat=newNode->data;
+            deleteFromTree(nodetoDelete,newNode->data);
+            root->data=dat;
+            return;
+        }
+    }
 }
 #endif // LINKEDBST_H
 
