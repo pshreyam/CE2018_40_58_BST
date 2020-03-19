@@ -7,5 +7,5 @@ Amar Kumar Mandal ==> 58
 
 ## Required setup to run file
 
-Gcc compiler for linux <br />
+g++ compiler for linux <br />
 Dev-C++ or Code::Blocks for windows
